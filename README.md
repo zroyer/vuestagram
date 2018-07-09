@@ -1,2 +1,2 @@
 # vuestagram
-Instagram feed featuring vuejs
+Instagram feed featuring Vue.js
