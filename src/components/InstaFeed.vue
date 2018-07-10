@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="(gram, index) in grams">
-      <img :src="gram.images.standard_resolution.url" :alt="gram.text" />  
+      <img :src="gram.images.standard_resolution.url" :alt="gram.text" />
     </div>
   </div>
 </template>
@@ -24,13 +24,11 @@ export default {
   created() {
     axios.get(this.url + "?access_token=" + this.access_token)
       .then(({data}) => {
-        console.log(data)
         this.grams = data.data
         this.username = data.data[0].user.username
         this.next_url = data.pagination.next_url
       })
       .catch(function (error) {
-        console.log(error)
         this.error = true
       });
   }
